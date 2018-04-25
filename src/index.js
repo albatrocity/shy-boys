@@ -4,7 +4,7 @@ import "./main.css";
 
 let pushables = [];
 let lastCursorPos = { x: 0, y: 0 };
-const minDelta = 8;
+const minDelta = 5;
 const hitPadding = 20;
 const limit = 100;
 var inThrottle;
@@ -69,16 +69,26 @@ const handlePush = (id, el, delta, pointerPos) => {
   if (xDirection === "left") {
     animation.translateX = [{ value: velValue * 1 }, { value: 0 }];
     if (pointerPos.y >= matchCenter.y) {
-      animation.rotate = [{ value: `${velValue}deg` }, { value: "0deg" }];
-    } else {
       animation.rotate = [{ value: `-${velValue}deg` }, { value: "0deg" }];
+    } else {
+      animation.rotate = [{ value: `${velValue}deg` }, { value: "0deg" }];
     }
   }
   if (yDirection === "up") {
     animation.translateY = [{ value: -1 * velValue * 1 }, { value: 0 }];
+    if (pointerPos.x >= matchCenter.x) {
+      animation.rotate = [{ value: `-${velValue}deg` }, { value: "0deg" }];
+    } else {
+      animation.rotate = [{ value: `${velValue}deg` }, { value: "0deg" }];
+    }
   }
   if (yDirection === "down") {
     animation.translateY = [{ value: velValue * 1 }, { value: 0 }];
+    if (pointerPos.x >= matchCenter.x) {
+      animation.rotate = [{ value: `${velValue}deg` }, { value: "0deg" }];
+    } else {
+      animation.rotate = [{ value: `-${velValue}deg` }, { value: "0deg" }];
+    }
   }
 
   if (!throttles[id]) {

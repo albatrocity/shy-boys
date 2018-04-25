@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -9,11 +10,34 @@ body {
   background-repeat: repeat;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+.background-interactive {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .constrained-container {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+}
+
+.constrained-container-inner {
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .pushable {
@@ -23,30 +47,12 @@ body {
   z-index: 1;
 }
 
-#push1 {
-  width: 200px;
-  height: 200px;
-  background: orange;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-image: url("./hand1.png");
-}
-#push2 {
-  width: 100px;
-  height: 100px;
-  background: blue;
-  position: absolute;
-  left: 20%;
-  top: 10%;
-}
-
 #leaf1 {
   width: 200px;
   height: 202px;
   position: absolute;
-  right: 16%;
-  top: 8%;
+  right: -9%;
+  top: 2%;
   z-index: 3;
   background-image: url("./leaf_2.png");
 }
@@ -65,9 +71,9 @@ body {
   width: 175px;
   height: 400px;
   position: absolute;
-  left: 50%;
-  top: 5%;
-  z-index: 2;
+  left: -55%;
+  top: 10%;
+  z-index: 1;
   background-image: url("./leaf_3.png");
 }
 
@@ -75,8 +81,9 @@ body {
   width: 200px;
   height: 245px;
   position: absolute;
-  left: 10%;
-  top: 25%;
+  left: 4%;
+  top: 35%;
+  z-index: 2;
   background-image: url("./leaf_4.png");
 }
 
@@ -84,7 +91,7 @@ body {
   width: 280px;
   height: 314px;
   position: absolute;
-  left: 22%;
+  left: -20%;
   top: -2%;
   z-index: 2;
   background-image: url("./leaf_5.png");
@@ -101,11 +108,11 @@ body {
 }
 
 #leaf7 {
-  width: 350px;
-  height: 346px;
+  width: 300px;
+  height: 286px;
   position: absolute;
-  right: -1%;
-  bottom: -1%;
+  right: -4%;
+  bottom: -4%;
   background-image: url("./leaf_7.png");
   z-index: 3;
 }
@@ -114,17 +121,18 @@ body {
   width: 230px;
   height: 230px;
   position: absolute;
-  left: 18%;
+  left: 2%;
   bottom: -5%;
+  z-index: 2;
   background-image: url("./circle_red_1.png");
 }
 
 #circle3 {
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: 200px;
   position: absolute;
-  left: 30%;
-  bottom: 12%;
+  left: 8%;
+  bottom: 32%;
   background-image: url("./circle_purple_1.png");
 }
 
@@ -133,7 +141,7 @@ body {
   height: 91px;
   position: absolute;
   left: 50%;
-  bottom: -0.5%;
+  bottom: -4%;
   background-image: url("./circle_blue_1.png");
 }
 
@@ -174,11 +182,11 @@ body {
 }
 
 #flower1 {
-  width: 250px;
-  height: 250px;
+  width: 210px;
+  height: 210px;
   position: absolute;
-  left: 30%;
-  bottom: 15%;
+  left: 10%;
+  bottom: 25%;
   background-image: url("./flower_1.png");
 }
 
@@ -186,8 +194,8 @@ body {
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 5%;
-  bottom: 5%;
+  left: 1%;
+  bottom: 35%;
   background-image: url("./flower_2.png");
 }
 
@@ -195,8 +203,9 @@ body {
   width: 300px;
   height: 300px;
   position: absolute;
-  left: 2%;
-  top: -1%;
+  left: -5%;
+  top: -4%;
+  z-index: 0;
   background-image: url("./hand_2.png");
 }
 
@@ -213,35 +222,39 @@ body {
   width: 120px;
   height: 118px;
   position: absolute;
-  left: 20%;
+  left: 3%;
   bottom: -1%;
+  z-index: 2;
   background-image: url("./hand_5.png");
 }
 
 #hand3 {
-  width: 220px;
-  height: 150px;
+  width: 200px;
+  height: 140px;
   position: absolute;
-  right: 200px;
+  right: 120px;
   bottom: 0;
   z-index: 2;
   background-image: url("./hand_3.png");
 }
 
 #circle2 {
-  width: 300px;
-  height: 250px;
+  width: 260px;
+  height: 180px;
   position: absolute;
-  right: -4%;
-  bottom: -0.5%;
+  right: -6%;
+  bottom: -6%;
   z-index: 2;
   background-image: url("./circle_pink_1.png");
 }
 
 #band_name {
-  width: 500px;
-  height: 207px;
+  width: 220px;
+  height: 87px;
   position: absolute;
   background-image: url("./shy_boys.png");
+  margin: 0 auto;
+  top: 100px;
+  left: 35%;
   z-index: 5;
 }
