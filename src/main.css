@@ -1,0 +1,247 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: url("./blue_bg.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.constrained-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pushable {
+  background-position: left top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#push1 {
+  width: 200px;
+  height: 200px;
+  background: orange;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: url("./hand1.png");
+}
+#push2 {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
+
+#leaf1 {
+  width: 200px;
+  height: 202px;
+  position: absolute;
+  right: 16%;
+  top: 8%;
+  z-index: 3;
+  background-image: url("./leaf_2.png");
+}
+
+#leaf2 {
+  width: 200px;
+  height: 183px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  background-image: url("./leaf_1.png");
+}
+
+#leaf3 {
+  width: 175px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  z-index: 2;
+  background-image: url("./leaf_3.png");
+}
+
+#leaf4 {
+  width: 200px;
+  height: 245px;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  background-image: url("./leaf_4.png");
+}
+
+#leaf5 {
+  width: 280px;
+  height: 314px;
+  position: absolute;
+  left: 22%;
+  top: -2%;
+  z-index: 2;
+  background-image: url("./leaf_5.png");
+}
+
+#leaf6 {
+  width: 230px;
+  height: 303px;
+  position: absolute;
+  right: -1%;
+  top: -1%;
+  z-index: 3;
+  background-image: url("./leaf_6.png");
+}
+
+#leaf7 {
+  width: 350px;
+  height: 346px;
+  position: absolute;
+  right: -1%;
+  bottom: -1%;
+  background-image: url("./leaf_7.png");
+  z-index: 3;
+}
+
+#circle1 {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  left: 18%;
+  bottom: -5%;
+  background-image: url("./circle_red_1.png");
+}
+
+#circle3 {
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  left: 30%;
+  bottom: 12%;
+  background-image: url("./circle_purple_1.png");
+}
+
+#circle4 {
+  width: 200px;
+  height: 91px;
+  position: absolute;
+  left: 50%;
+  bottom: -0.5%;
+  background-image: url("./circle_blue_1.png");
+}
+
+#circle5 {
+  width: 300px;
+  height: 229px;
+  position: absolute;
+  left: 28%;
+  top: -2%;
+  background-image: url("./circle_yellow_1.png");
+}
+
+#circle6 {
+  width: 260px;
+  height: 204px;
+  position: absolute;
+  right: 3%;
+  top: -1%;
+  background-image: url("./circle_yellow_2.png");
+}
+
+#circle7 {
+  width: 360px;
+  height: 254px;
+  position: absolute;
+  right: 18%;
+  top: 3%;
+  background-image: url("./circle_deep_red_1.png");
+}
+
+#circle8 {
+  width: 200px;
+  height: 204px;
+  position: absolute;
+  right: 1%;
+  top: 35%;
+  background-image: url("./circle_red_1.png");
+}
+
+#flower1 {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  left: 30%;
+  bottom: 15%;
+  background-image: url("./flower_1.png");
+}
+
+#flower2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  background-image: url("./flower_2.png");
+}
+
+#hand2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 2%;
+  top: -1%;
+  background-image: url("./hand_2.png");
+}
+
+#hand4 {
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  right: -1%;
+  top: 30%;
+  background-image: url("./hand_4.png");
+}
+
+#hand5 {
+  width: 120px;
+  height: 118px;
+  position: absolute;
+  left: 20%;
+  bottom: -1%;
+  background-image: url("./hand_5.png");
+}
+
+#hand3 {
+  width: 220px;
+  height: 150px;
+  position: absolute;
+  right: 200px;
+  bottom: 0;
+  z-index: 2;
+  background-image: url("./hand_3.png");
+}
+
+#circle2 {
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  right: -4%;
+  bottom: -0.5%;
+  z-index: 2;
+  background-image: url("./circle_pink_1.png");
+}
+
+#band_name {
+  width: 500px;
+  height: 207px;
+  position: absolute;
+  background-image: url("./shy_boys.png");
+  z-index: 5;
+}
