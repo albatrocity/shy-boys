@@ -1,0 +1,15 @@
+import Pushable from '../Pushable';
+
+const pos = {
+  width: "260px", height: "260px", right: "-8%", bottom: "-10%", zIndex: 2,
+}
+
+const smallPos = {
+  width: "150px", height: "150px", right: "-8%", bottom: "-8%", zIndex: 2,
+}
+
+const Circle4 = () => (
+  <Pushable image="circle_pink_1.png" position={pos} smallPosition={smallPos} smallPos={smallPos} />
+)
+
+export default Circle4
