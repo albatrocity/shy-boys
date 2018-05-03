@@ -1,7 +1,7 @@
 import Pushable from '../Pushable';
 
 const pos = {
-  width: "280px", height: "314px", left: "-20%", top: "-2%", zIndex: 2
+  width: "280px", height: "314px", left: "-20%", top: "-4%", zIndex: 2
 }
 
 const smallPos = {

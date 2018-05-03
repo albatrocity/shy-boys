@@ -13,7 +13,8 @@ class Layout extends Component {
     return (
       <div>
         <Head>
-          <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta key="viewport" name="viewport" content="width=device-width, i nitial-scale=1"/>
+          <meta property="og:title" content="Shy Boys" key="og:title"/>
         </Head>
         <style jsx global>{`
           body, html {
@@ -21,7 +22,12 @@ class Layout extends Component {
             width: 100%;
             margin: 0;
             padding: 0;
-            background: url("./static/images/blue_bg.jpg");
+            background: url("/static/images/blue_bg.jpg");
+            font-family: 'EB Garamond', serif;
+            color: #082738;
+          }
+          body a {
+            color: #b03177;
           }
         `}</style>
         <AnimationArea />

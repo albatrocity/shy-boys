@@ -16,7 +16,7 @@ const Pushable = ({ position = {}, smallPosition = {}, image }) => {
         bottom: ${position.bottom};
 
       }
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
         .pushable {
           z-index: ${smallPosition.zIndex};
           width: ${smallPosition.width};

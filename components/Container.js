@@ -12,12 +12,13 @@ const Container = ({children}) => (
         margin: 0 auto;
         position: relative;
         padding-top: 200px;
-        padding-bottom: 200px;
+        padding-bottom: 800px;
         overflow: visible;
       }
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
         .container-inner {
           max-width: 280px;
+          padding-bottom: 400px;
         }
       }
     `}</style>

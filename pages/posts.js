@@ -1,26 +1,21 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import { setupPushables, handleMouseMove } from '../lib/pushables';
 import fetch from 'isomorphic-unfetch';
 import PostsView from '../components/PostsView';
 import Pagination from '../components/Pagination';
-import { apiUrl } from '../config/urls';
 
-
-const Index = ({ posts }) => (
+const Posts = ({ posts }) => {
+  return (
   <Layout>
-    <Head>
-      <title>Shy Boys</title>
-    </Head>
-    <PostsView data={ posts.results } />
+    <PostsView data={posts.results} />
     <Pagination {...posts} route="/posts" />
-  </Layout>
-)
-
-Index.getInitialProps = async ({ req }) => {
-  const res = await fetch(`${apiUrl}/posts`)
+  </Layout>)
+}
+//
+Posts.getInitialProps = async (context) => {
+  const res = await fetch(`${apiUrl}/posts${context.query.page ? `?page=${context.query.page}` : ''}`)
   const json = await res.json()
   return { posts: json }
 }
 
-export default Index
+export default Posts
