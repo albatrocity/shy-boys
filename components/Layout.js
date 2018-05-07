@@ -23,11 +23,50 @@ class Layout extends Component {
             margin: 0;
             padding: 0;
             background: url("/static/images/blue_bg.jpg");
-            font-family: 'EB Garamond', serif;
             color: #082738;
           }
           body a {
             color: #b03177;
+          }
+          h1 {
+            font-family: "EB Garamond";
+            font-size: 29px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 29px;
+          }
+          h3 {
+            font-family: "EB Garamond";
+            font-size: 22px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 29px;
+          }
+          p {
+            font-family: "EB Garamond";
+            font-size: 18px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 29px;
+          }
+          blockquote {
+            font-family: "EB Garamond";
+            font-size: 22px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 29px;
+          }
+          pre {
+            font-family: "EB Garamond";
+            font-size: 15px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 29px;
           }
         `}</style>
         <AnimationArea />

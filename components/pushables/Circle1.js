@@ -1,7 +1,11 @@
 import Pushable from '../Pushable';
 
 const pos = {
-  width: "300px", height: "286px", left: "4%", bottom: "-4%", zIndex: 2,
+  width: "270px", height: "256px", left: "4%", bottom: "-4%", zIndex: 2,
+}
+
+const medPos = {
+  width: "160px", height: "160px", left: "4%", bottom: "-4%", zIndex: 2,
 }
 
 const smallPos = {
@@ -9,7 +13,7 @@ const smallPos = {
 }
 
 const Circle1 = () => (
-  <Pushable image="circle_red_1.png" position={pos} smallPosition={smallPos} smallPos={smallPos} />
+  <Pushable image="circle_red_1.png" position={pos} smallPosition={smallPos} smallPosition={smallPos} medPosition={medPos} />
 )
 
 export default Circle1
