@@ -20,13 +20,13 @@ const Navigation = ({children}) => (
     <Link href="/">
       <a>news</a>
     </Link>
-    <Link as="/music" href="/pages?slug=music">
+    <Link href="/music">
       <a>music</a>
     </Link>
     <Link href="/tour">
       <a>tour</a>
     </Link>
-    <Link as="/about" href="/pages?slug=about">
+    <Link href="/about">
       <a>about</a>
     </Link>
     <Link href="/contact">

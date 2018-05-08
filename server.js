@@ -66,18 +66,6 @@ app.prepare()
       app.render(req, res, actualPage, queryParams)
     })
 
-    server.get('/about', (req, res) => {
-      const actualPage = '/page'
-      const queryParams = { slug: 'about' }
-      app.render(req, res, actualPage, queryParams)
-    })
-
-    server.get('/music', (req, res) => {
-      const actualPage = '/page'
-      const queryParams = { slug: 'music' }
-      app.render(req, res, actualPage, queryParams)
-    })
-
     server.get('*', (req, res) => {
       return handle(req, res)
     })
