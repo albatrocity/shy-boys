@@ -13,8 +13,8 @@ const Page = new keystone.List('Page', {
 })
 
 Page.add({
-  title: { type: Types.Text },
   name: { type: Types.Text, required: true, index: true },
+  title: { type: Types.Text },
   slug: { type: Types.Text, index: true },
   content: { type: Types.Html, wysiwyg: true, initial: true },
   images: {
@@ -30,5 +30,5 @@ cacheBuster(Page)
 /**
  * Registration
  */
-Page.defaultColumns = 'title, name, slug'
+Page.defaultColumns = 'name, slug'
 Page.register()
