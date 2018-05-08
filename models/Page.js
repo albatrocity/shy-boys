@@ -30,5 +30,5 @@ cacheBuster(Page)
 /**
  * Registration
  */
-Page.defaultColumns = 'name, url'
+Page.defaultColumns = 'title, name, slug'
 Page.register()

@@ -10,6 +10,7 @@ import Leaf5 from './pushables/Leaf5';
 
 class Layout extends Component {
   render() {
+    const { xSmallNoPadding } = this.props;
     return (
       <div>
         <Head>
@@ -70,7 +71,7 @@ class Layout extends Component {
           }
         `}</style>
         <AnimationArea />
-        <Container>
+        <Container xSmallNoPadding={xSmallNoPadding}>
           <Logo />
           <Leaf2 />
           <Leaf5 />

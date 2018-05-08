@@ -9,6 +9,8 @@ const Post = ({ post }) => (
   <Layout>
     <Head>
       <title>{post.title} - Shy Boys</title>
+      <meta property="og:title" content={post.title} key="og:title"/>
+      <meta property="og:image:url" content={ (post.images[0] || {}).url } key="og:image:url"/>
     </Head>
     <PostView {...post } />
   </Layout>

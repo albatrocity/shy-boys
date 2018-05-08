@@ -13,6 +13,7 @@ const Page = ({ page }) => (
       <meta property="og:title" content={`${page.title} - Shy Boys`} />
       <meta property="og:site_name" content="Shy Boys" />
       <title>{page.title} - Shy Boys</title>
+      <meta property="og:image:url" content={ (page.images[0] || {}).url } key="og:image:url"/>
     </Head>
     { page.images.length > 0 &&
       <section className='images'>

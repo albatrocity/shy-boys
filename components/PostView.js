@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import ImageSlider from './ImageSlider';
 
-const PostView = ({title, content, publishedAt, slug, images}) => {
+const PostView = ({title, content, publishedAt, slug, images = []}) => {
   return (
     <article className='post'>
       <style jsx>{`

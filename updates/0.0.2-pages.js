@@ -10,6 +10,7 @@
 exports.create = {
   Page: [
     { 'slug': 'about', name: 'About', content: ''},
+    { 'slug': 'music', name: 'Music', content: ''},
   ],
 }
 

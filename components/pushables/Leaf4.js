@@ -12,8 +12,18 @@ const smallPos = {
   width: "75px", height: "200px", left: "-2%", top: "15%",
 }
 
+const xSmallPos = { display: "none" }
+
+const routeAnimation = {
+  rotate: '2deg',
+  direction: 'alternate',
+  duration: 400,
+  delay: 0,
+  easing: 'easeInQuad',
+}
+
 const Leaf4 = () => (
-  <Pushable image="leaf_4.png" position={pos} smallPosition={smallPos} medPosition={medPos} />
+  <Pushable image="leaf_4.png" position={pos} smallPosition={smallPos} medPosition={medPos} routeAnimation={routeAnimation} xSmallPosition={xSmallPos} />
 )
 
 export default Leaf4

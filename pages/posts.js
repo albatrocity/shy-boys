@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import { setupPushables, handleMouseMove } from '../lib/pushables';
 import fetch from 'isomorphic-unfetch';
@@ -7,6 +8,10 @@ import Pagination from '../components/Pagination';
 const Posts = ({ posts }) => {
   return (
   <Layout>
+    <Head>
+      <title>Shy Boys</title>
+      <meta property="og:image:url" content={ posts.image } key="og:image:url"/>
+    </Head>
     <PostsView data={posts.results} />
     <Pagination {...posts} route="/posts" />
   </Layout>)

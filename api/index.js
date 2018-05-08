@@ -13,7 +13,6 @@ module.exports = function(server, keystone) {
 }
 
 const fillImages = (response, width, height) => {
-  console.log('RESPONSE', response);
   return Object.assign(response, {
     images: response.images.map(image => ({
       url: image.fill(width || 1200, height || 800),
@@ -33,7 +32,6 @@ const sizeImages = (response, width, height) => {
 
 async function updatePageCache(req, config, contentKey) {
   const Page = req.keystone.list('Page')
-  const Configuration = req.keystone.list('Configuration')
 
   cache.put('cache_key', config ? config.cache_key : Date.now())
 
@@ -45,7 +43,6 @@ async function updatePageCache(req, config, contentKey) {
 
 async function updatePostCache(req, config, contentKey) {
   const Post = req.keystone.list('Post')
-  const Configuration = req.keystone.list('Configuration')
 
   cache.put('cache_key', config ? config.cache_key : Date.now())
 
@@ -57,7 +54,6 @@ async function updatePostCache(req, config, contentKey) {
 
 async function updateContactsCache(req, config, contentKey) {
   const Contact = req.keystone.list('Contact')
-  const Configuration = req.keystone.list('Configuration')
 
   cache.put('cache_key', config ? config.cache_key : Date.now())
 
@@ -67,8 +63,6 @@ async function updateContactsCache(req, config, contentKey) {
 }
 
 async function updatePostsCache(req, config, contentKey) {
-  const Configuration = req.keystone.list('Configuration')
-
   cache.put('cache_key', config ? config.cache_key : Date.now())
   const Post = req.keystone.list('Post')
   return new Promise((resolve, reject) => {
@@ -83,8 +77,7 @@ async function updatePostsCache(req, config, contentKey) {
     .exec((err, res) => {
       if (err) { return reject(err) }
       const prepared = res.results.map(x => sizeImages(x))
-      console.log('PREPARED ALL', prepared);
-      cache.put(contentKey, Object.assign(res, { results: prepared }));
+      cache.put(contentKey, Object.assign(res, { results: prepared, image: config.image.secure_url }));
       return resolve(cache.get(contentKey));
     })
   })

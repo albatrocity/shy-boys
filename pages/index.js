@@ -11,6 +11,7 @@ const Index = ({ posts }) => (
   <Layout>
     <Head>
       <title>Shy Boys</title>
+      <meta property="og:image:url" content={ posts.image } key="og:image:url"/>
     </Head>
     <PostsView data={ posts.results } />
     <Pagination {...posts} route="/posts" />
@@ -20,6 +21,7 @@ const Index = ({ posts }) => (
 Index.getInitialProps = async ({ req }) => {
   const res = await fetch(`${apiUrl}/posts`)
   const json = await res.json()
+  console.log(json);
   return { posts: json }
 }
 

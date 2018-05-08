@@ -12,7 +12,7 @@ class BandsInTown extends Component {
 
   render() {
     return (
-      <a className="bit-widget-initializer" data-artist-name="Shy Boys" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#b03177" data-popup-background-color="rgba(0,0,0,0)" data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#FFFFFF"></a>
+      <a className="bit-widget-initializer" data-artist-name="Shy Boys" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#b03177" data-font="EB Garamond" data-auto-style="true" data-popup-background-color="rgba(0,0,0,0)" data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#FFFFFF"></a>
     );
   }
 }

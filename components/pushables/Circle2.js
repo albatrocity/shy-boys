@@ -9,7 +9,7 @@ const medPos = {
 }
 
 const smallPos = {
-  width: "120px", height: "50px", left: "50%", bottom: "-2%", zIndex: 3,
+  display: "none"
 }
 
 const Circle2 = () => (

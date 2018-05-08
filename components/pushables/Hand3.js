@@ -9,11 +9,32 @@ const medPos = {
 }
 
 const smallPos = {
-  width: "120px", height: "100px", right: "80px", bottom: "-2%",
+  width: "80px", height: "60px", right: "-20px", bottom: "20%", zIndex: 2,
 }
 
+const xSmallPos = {
+  display: "none"
+}
+
+const routeAnimation = [
+  {
+    rotate: '10deg',
+    translateY: -10,
+    delay: 0,
+    duration: 200,
+    easing: 'easeOutQuad'
+  },
+  {
+    rotate: '0deg',
+    translateY: 0,
+    delay: 0,
+    duration: 400,
+    easing: 'easeInOutBack'
+  },
+]
+
 const Hand3 = () => (
-  <Pushable image="hand_3.png" position={pos} smallPosition={smallPos} medPosition={medPos} />
+  <Pushable image="hand_3.png" position={pos} smallPosition={smallPos} medPosition={medPos} xSmallPosition={xSmallPos} routeAnimation={routeAnimation} />
 )
 
 export default Hand3

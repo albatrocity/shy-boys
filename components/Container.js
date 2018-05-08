@@ -1,5 +1,5 @@
 
-const Container = ({children}) => (
+const Container = ({children, xSmallNoPadding}) => (
   <div>
     <style jsx>{`
       margin: 0;
@@ -24,6 +24,12 @@ const Container = ({children}) => (
       @media (max-width: 420px) {
         .container-inner {
           max-width: 280px;
+          padding-bottom: 100px;
+        }
+      }
+      @media (max-width: 320px) {
+        .container-inner {
+          max-width: ${xSmallNoPadding ? 'none' : '240px'};
           padding-bottom: 100px;
         }
       }

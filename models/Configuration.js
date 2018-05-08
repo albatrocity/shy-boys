@@ -12,6 +12,13 @@ Configuration.add({
   active: { type: Types.Boolean },
   meta_description: { type: Types.Textarea, label: 'Meta Tag Description' },
   cache_key: { type: Types.Number, default: Date.now() },
+  image: {
+    type: Types.CloudinaryImage,
+    folder: 'posts',
+    select: true,
+    autoCleanup : true,
+    note: "Default share image",
+  }
 })
 
 Configuration.schema.pre('save', function(next) {

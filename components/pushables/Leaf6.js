@@ -9,11 +9,28 @@ const medPos = {
 }
 
 const smallPos = {
-  width: "100px", height: "200px", right: "-1%", top: "-1%",
+  width: "100px", height: "200px", right: "-1%", top: "-1%", display: "none"
 }
 
+const routeAnimation = [
+  {
+    rotate: '10deg',
+    translateY: -10,
+    delay: 0,
+    duration: 200,
+    easing: 'easeOutQuad'
+  },
+  {
+    rotate: '0deg',
+    translateY: 0,
+    delay: 0,
+    duration: 400,
+    easing: 'easeInOutBack'
+  },
+]
+
 const Leaf4 = () => (
-  <Pushable image="leaf_6.png" position={pos} smallPosition={smallPos} medPosition={medPos} />
+  <Pushable image="leaf_6.png" position={pos} smallPosition={smallPos} medPosition={medPos} routeAnimation={routeAnimation} transformOrigin="top center" />
 )
 
 export default Leaf4
