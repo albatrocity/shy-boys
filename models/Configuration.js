@@ -11,7 +11,7 @@ Configuration.add({
   name: { type: Types.Text, required: true, initial: true, default: 'Default' },
   active: { type: Types.Boolean },
   meta_description: { type: Types.Textarea, label: 'Meta Tag Description' },
-  cache_key: { type: Types.Number, default: Date.now() },
+  cache_key: { type: Types.Number, default: Date.now().toString() },
   image: {
     type: Types.CloudinaryImage,
     folder: 'posts',
@@ -22,7 +22,7 @@ Configuration.add({
 })
 
 Configuration.schema.pre('save', function(next) {
-  this.cache_key = Date.now()
+  this.cache_key = Date.now().toString();
   next()
 })
 /**
