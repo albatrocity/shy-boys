@@ -24,7 +24,6 @@ Post.add({
     select: true,
     autoCleanup : true,
   },
-  url: { type: Types.Url },
 })
 cacheBuster(Post)
 
