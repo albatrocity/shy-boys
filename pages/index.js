@@ -12,6 +12,8 @@ const Index = ({ posts }) => (
     <Head>
       <title>Shy Boys</title>
       <meta property="og:image:url" content={ posts.image } key="og:image:url"/>
+      <meta property="description" content={ posts.meta } key="description"/>
+      <meta property="og:description" content={ posts.meta } key="og:description"/>
     </Head>
     <PostsView data={ posts.results } />
     <Pagination {...posts} route="/posts" />
