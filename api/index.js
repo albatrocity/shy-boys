@@ -77,7 +77,7 @@ async function updatePostsCache(req, config, contentKey) {
     .exec((err, res) => {
       if (err) { return reject(err) }
       const prepared = res.results.map(x => sizeImages(x))
-      cache.put(contentKey, Object.assign(res, { results: prepared, image: config.image.secure_url }));
+      cache.put(contentKey, Object.assign(res, { results: prepared, image: config.image ? config.image.secure_url : undefined }));
       return resolve(cache.get(contentKey));
     })
   })
