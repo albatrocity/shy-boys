@@ -12,7 +12,7 @@ const Container = ({children, xSmallNoPadding}) => (
         margin: 0 auto;
         position: relative;
         padding-top: 200px;
-        padding-bottom: 800px;
+        padding-bottom: 200px;
         overflow: visible;
       }
       @media (max-width: 1024px) {
