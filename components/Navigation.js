@@ -1,11 +1,15 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-const Navigation = ({children}) => (
+const Navigation = ({ children }) => (
   <div>
     <style jsx>{`
       text-align: center;
       padding-bottom: 1em;
       border-bottom: 1px solid #2e6f92;
+      font-family: "Fredoka One", cursive;
+      margin-bottom: 1em;
+      z-index: 10;
+      position: relative;
       a {
         margin: 1em;
         text-decoration: none;
@@ -33,6 +37,6 @@ const Navigation = ({children}) => (
       <a>contact</a>
     </Link>
   </div>
-)
+);
 
-export default Navigation
+export default Navigation;

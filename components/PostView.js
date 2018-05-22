@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import ImageSlider from './ImageSlider';
+import Link from "next/link";
+import Head from "next/head";
+import ImageSlider from "./ImageSlider";
 
-const PostView = ({title, content, publishedAt, slug, images = []}) => {
+const PostView = ({ title, content, publishedAt, slug, images = [] }) => {
   return (
-    <article className='post'>
+    <article className="post">
       <style jsx>{`
         .post {
           margin-bottom: 2em;
@@ -13,6 +13,7 @@ const PostView = ({title, content, publishedAt, slug, images = []}) => {
         }
         .post header cite {
           font-style: normal;
+          font-family: "Fredoka One", cursive;
         }
         .post-title {
           margin-bottom: 0;
@@ -22,19 +23,21 @@ const PostView = ({title, content, publishedAt, slug, images = []}) => {
         }
       `}</style>
       <header>
-        <h1 className='post-title'>{ title }</h1>
+        {images.length > 0 && (
+          <section className="images">
+            <ImageSlider images={images} />
+          </section>
+        )}
+        <h1 className="post-title">{title}</h1>
         <cite>
-          <Link as={`/posts/${slug}`} href={`/post?slug=${slug}`}><a>{ new Date(publishedAt).toLocaleDateString() }</a></Link>
+          <Link as={`/posts/${slug}`} href={`/post?slug=${slug}`}>
+            <a>{new Date(publishedAt).toLocaleDateString()}</a>
+          </Link>
         </cite>
       </header>
-      { images.length > 0 &&
-        <section className='images'>
-          <ImageSlider images={images} />
-        </section>
-      }
       <section dangerouslySetInnerHTML={{ __html: content }} />
     </article>
-  )
-}
+  );
+};
 
-export default PostView
+export default PostView;

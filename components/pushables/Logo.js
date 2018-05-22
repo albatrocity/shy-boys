@@ -1,36 +1,54 @@
-import Pushable from '../Pushable';
+import Pushable from "../Pushable";
 
 const pos = {
-  width: "220px", height: "87px", left: "35%", top: "100px", zIndex: 1,
-}
+  width: "270px",
+  height: "107px",
+  left: "30%",
+  top: "60px",
+  zIndex: 1
+};
 
 const medPos = {
-  width: "180px", height: "77px", left: "15%", top: "100px", zIndex: 1,
-}
+  width: "260px",
+  height: "120px",
+  left: "20%",
+  top: "80px",
+  zIndex: 1
+};
 
 const smallPos = {
-  width: "180px", height: "67px", left: "26%", top: "80px", zIndex: 1,
-}
+  width: "180px",
+  height: "67px",
+  left: "26%",
+  top: "80px",
+  zIndex: 1
+};
 
 const routeAnimation = [
   {
-    rotate: '10deg',
+    rotate: "10deg",
     translateY: -10,
     delay: 0,
     duration: 200,
-    easing: 'easeOutQuad'
+    easing: "easeOutQuad"
   },
   {
-    rotate: '0deg',
+    rotate: "0deg",
     translateY: 0,
     delay: 0,
     duration: 400,
-    easing: 'easeInOutBack'
-  },
-]
+    easing: "easeInOutBack"
+  }
+];
 
 const Logo = () => (
-  <Pushable image="shy_boys.png" position={pos} smallPosition={smallPos} medPosition={medPos} routeAnimation={routeAnimation} />
-)
+  <Pushable
+    image="shy_boys.png"
+    position={pos}
+    smallPosition={smallPos}
+    medPosition={medPos}
+    routeAnimation={routeAnimation}
+  />
+);
 
-export default Logo
+export default Logo;

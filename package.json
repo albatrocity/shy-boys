@@ -27,7 +27,7 @@
     "keystone": "4.0.0-beta.8",
     "keystone-storage-adapter-s3": "^1.1.1",
     "memory-cache": "^0.2.0",
-    "next": "^6.0.0",
+    "next": "6.0.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-slick": "^0.23.1"
