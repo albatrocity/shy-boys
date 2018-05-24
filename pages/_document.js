@@ -30,6 +30,11 @@ export default class MyDocument extends Document {
         <body className="custom_class">
           <Main />
           <NextScript />
+          <script
+            charset="utf-8"
+            src="https://widget.bandsintown.com/main.min.js"
+            async
+          />
         </body>
       </html>
     );

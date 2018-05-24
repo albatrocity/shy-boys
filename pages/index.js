@@ -20,7 +20,7 @@ const Index = ({ posts }) => (
       />
     </Head>
     <section className="shows">
-      <BandsInTown limit={5} />
+      <BandsInTown limit={1} />
     </section>
     <PostsView data={posts.results} />
     <Pagination {...posts} route="/posts" />
@@ -30,7 +30,6 @@ const Index = ({ posts }) => (
 Index.getInitialProps = async ({ req }) => {
   const res = await fetch(`${apiUrl}/posts`);
   const json = await res.json();
-  console.log(json);
   return { posts: json };
 };
 

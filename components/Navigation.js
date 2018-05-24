@@ -20,6 +20,17 @@ const Navigation = ({ children }) => (
       a:hover {
         border-color: #2e6f92;
       }
+      @media (max-width: 420px) {
+        a {
+          margin: 0.4em;
+        }
+      }
+      @media (max-width: 320px) {
+        a {
+          margin: 0.4em;
+          font-size: 13px;
+        }
+      }
     `}</style>
     <Link href="/">
       <a>news</a>

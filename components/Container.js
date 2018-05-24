@@ -1,5 +1,4 @@
-
-const Container = ({children, xSmallNoPadding}) => (
+const Container = ({ children, xSmallNoPadding }) => (
   <div>
     <style jsx>{`
       margin: 0;
@@ -29,13 +28,13 @@ const Container = ({children, xSmallNoPadding}) => (
       }
       @media (max-width: 320px) {
         .container-inner {
-          max-width: ${xSmallNoPadding ? 'none' : '240px'};
+          max-width: ${xSmallNoPadding ? "none" : "260px"};
           padding-bottom: 100px;
         }
       }
     `}</style>
-    <div className='container-inner'>{ children }</div>
+    <div className="container-inner">{children}</div>
   </div>
-)
+);
 
-export default Container
+export default Container;

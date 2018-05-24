@@ -21,6 +21,12 @@ const PostView = ({ title, content, publishedAt, slug, images = [] }) => {
         header {
           margin-bottom: 1em;
         }
+        header a {
+          text-decoration: none;
+        }
+        header cite a {
+          text-decoration: underline;
+        }
       `}</style>
       <header>
         {images.length > 0 && (
@@ -28,7 +34,11 @@ const PostView = ({ title, content, publishedAt, slug, images = [] }) => {
             <ImageSlider images={images} />
           </section>
         )}
-        <h1 className="post-title">{title}</h1>
+        <Link as={`/posts/${slug}`} href={`/post?slug=${slug}`}>
+          <a>
+            <h1 className="post-title">{title}</h1>
+          </a>
+        </Link>
         <cite>
           <Link as={`/posts/${slug}`} href={`/post?slug=${slug}`}>
             <a>{new Date(publishedAt).toLocaleDateString()}</a>

@@ -17,10 +17,10 @@ const medPos = {
 };
 
 const smallPos = {
-  width: "180px",
-  height: "67px",
-  left: "26%",
-  top: "80px",
+  width: "210px",
+  height: "97px",
+  left: "16%",
+  top: "90px",
   zIndex: 1
 };
 

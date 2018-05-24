@@ -1,17 +1,8 @@
 import React, { Component } from "react";
 
 class BandsInTown extends Component {
-  componentDidMount() {
-    const script = document.createElement("script");
-
-    script.src = "https://widget.bandsintown.com/main.min.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-  }
-
   render() {
-    const { limit } = this.props;
+    const { limit = 15 } = this.props;
     return (
       <div>
         <style jsx>{`
@@ -33,6 +24,7 @@ class BandsInTown extends Component {
           data-auto-style="true"
           data-popup-background-color="rgba(0,0,0,0)"
           data-background-color="rgba(0,0,0,0)"
+          data-separator-color="#402f51"
           data-display-limit={limit}
           data-link-text-color="#FFFFFF"
         />
