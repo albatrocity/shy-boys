@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import { setupPushables, handleMouseMove, handleTouchMove } from '../lib/pushables';
-import Pushable from './Pushable';
-import Leaf3 from './pushables/Leaf3';
-import Leaf4 from './pushables/Leaf4';
-import Leaf6 from './pushables/Leaf6';
-import Leaf7 from './pushables/Leaf7';
-import Circle1 from './pushables/Circle1';
-import Circle2 from './pushables/Circle2';
-import Circle3 from './pushables/Circle3';
-import Circle4 from './pushables/Circle4';
-import Hand2 from './pushables/Hand2';
-import Hand3 from './pushables/Hand3';
-import Hand4 from './pushables/Hand4';
-import Hand5 from './pushables/Hand5';
+import React, { Component } from "react";
+import {
+  setupPushables,
+  handleMouseMove,
+  handleTouchMove
+} from "../lib/pushables";
+import Pushable from "./Pushable";
+import Leaf3 from "./pushables/Leaf3";
+import Leaf4 from "./pushables/Leaf4";
+import Leaf6 from "./pushables/Leaf6";
+import Leaf7 from "./pushables/Leaf7";
+import Circle1 from "./pushables/Circle1";
+import Circle2 from "./pushables/Circle2";
+import Circle3 from "./pushables/Circle3";
+import Circle4 from "./pushables/Circle4";
+import Hand2 from "./pushables/Hand2";
+import Hand3 from "./pushables/Hand3";
+import Hand4 from "./pushables/Hand4";
+import Hand5 from "./pushables/Hand5";
 
 class AnimationArea extends Component {
   componentDidMount() {
@@ -25,7 +29,7 @@ class AnimationArea extends Component {
   render() {
     return (
       <div>
-        <div className='background-interactive'>
+        <div className="background-interactive">
           <style jsx>{`
             .background-interactive {
               width: 100%;
@@ -36,6 +40,8 @@ class AnimationArea extends Component {
               top: 0;
               right: 0;
               bottom: 0;
+              background: url("/static/images/blue_bg.jpg");
+              background-attachment: fixed;
             }
           `}</style>
           <Leaf3 />
@@ -53,8 +59,8 @@ class AnimationArea extends Component {
         </div>
         {this.props.children}
       </div>
-    )
+    );
   }
 }
 
-export default AnimationArea
+export default AnimationArea;

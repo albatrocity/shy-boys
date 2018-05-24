@@ -28,8 +28,6 @@ class Layout extends Component {
             width: 100%;
             margin: 0;
             padding: 0;
-            background: url("/static/images/blue_bg.jpg");
-            background-attachment: fixed;
             color: #082738;
           }
           body a {
