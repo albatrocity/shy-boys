@@ -4,10 +4,10 @@ import { setupPushables, handleMouseMove } from "../lib/pushables";
 import fetch from "isomorphic-unfetch";
 import PostsView from "../components/PostsView";
 import Pagination from "../components/Pagination";
-import BandsInTown from "../components/BandsInTown";
+import Shows from "../components/Shows";
 import { apiUrl } from "../config/urls";
 
-const Index = ({ posts }) => (
+const Index = ({ posts, shows }) => (
   <Layout>
     <Head>
       <title>Shy Boys</title>
@@ -20,7 +20,19 @@ const Index = ({ posts }) => (
       />
     </Head>
     <section className="shows">
-      <BandsInTown limit={1} />
+      <style jsx>{`
+        .shows {
+          background: rgba(255, 255, 255, 0.3);
+          padding: 1em;
+          margin-bottom: 1em;
+          border-radius: 0.4em;
+        }
+        h3 {
+          margin-top: 0;
+        }
+      `}</style>
+      <h3>Next show...</h3>
+      <Shows data={[shows[0]]} compact={true} />
     </section>
     <PostsView data={posts.results} />
     <Pagination {...posts} route="/posts" />
@@ -30,7 +42,9 @@ const Index = ({ posts }) => (
 Index.getInitialProps = async ({ req }) => {
   const res = await fetch(`${apiUrl}/posts`);
   const json = await res.json();
-  return { posts: json };
+  const showsRes = await fetch(`${apiUrl}/shows`);
+  const shows = await showsRes.json();
+  return { posts: json, shows };
 };
 
 export default Index;

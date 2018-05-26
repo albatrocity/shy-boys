@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ActiveLink from "./ActiveLink";
 
 const Navigation = ({ children }) => (
   <div>
@@ -18,7 +18,7 @@ const Navigation = ({ children }) => (
         border-color: transparent;
       }
       a:hover {
-        border-color: #2e6f92;
+        color: #bb2378;
       }
       @media (max-width: 420px) {
         a {
@@ -32,21 +32,11 @@ const Navigation = ({ children }) => (
         }
       }
     `}</style>
-    <Link href="/">
-      <a>news</a>
-    </Link>
-    <Link href="/music">
-      <a>music</a>
-    </Link>
-    <Link href="/tour">
-      <a>tour</a>
-    </Link>
-    <Link href="/about">
-      <a>about</a>
-    </Link>
-    <Link href="/contact">
-      <a>contact</a>
-    </Link>
+    <ActiveLink href="/">news</ActiveLink>
+    <ActiveLink href="/music">music</ActiveLink>
+    <ActiveLink href="/tour">tour</ActiveLink>
+    <ActiveLink href="/about">about</ActiveLink>
+    <ActiveLink href="/contact">contact</ActiveLink>
   </div>
 );
 

@@ -29,39 +29,77 @@ class Layout extends Component {
             margin: 0;
             padding: 0;
             color: #082738;
+            font-size: 1em;
           }
           body a {
             color: #402f51;
           }
-          h1 {
+          h1,
+          h2,
+          h3,
+          h4 {
             font-family: "Fredoka One", cursive;
-            font-size: 29px;
+            font-weight: normal;
             font-style: normal;
             font-variant: normal;
-            font-weight: 500;
-            line-height: 29px;
             color: #402f51;
-          }
-          h2 {
-            font-family: "Fredoka One", cursive;
-            color: #402f51;
-          }
-          h3 {
-            font-family: "Fredoka One", cursive;
-            font-size: 22px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 500;
-            line-height: 29px;
-            color: #402f51;
+            margin: 1.414em 0 0.5em;
+            font-weight: inherit;
+            line-height: 1.2;
           }
           p {
             font-family: "EB Garamond";
-            font-size: 18px;
             font-style: normal;
             font-variant: normal;
             font-weight: 400;
             line-height: 29px;
+          }
+
+          html {
+            font-size: 1em;
+          }
+
+          body {
+            background-color: white;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #333;
+          }
+
+          p {
+            margin-bottom: 1.3em;
+          }
+
+          h1,
+          h2,
+          h3,
+          h4 {
+            margin: 1.414em 0 0.5em;
+            font-weight: inherit;
+            line-height: 1.2;
+          }
+
+          h1 {
+            margin-top: 0;
+            font-size: 1.602em;
+          }
+
+          h2 {
+            font-size: 1.424em;
+          }
+
+          h3 {
+            font-size: 1.266em;
+          }
+
+          h4 {
+            font-size: 1.125em;
+          }
+
+          small,
+          .font_small {
+            font-size: 0.889em;
           }
           blockquote {
             font-family: "EB Garamond";
@@ -78,6 +116,12 @@ class Layout extends Component {
             font-variant: normal;
             font-weight: 400;
             line-height: 29px;
+          }
+
+          @media (max-width: 420px) {
+            html {
+              font-size: 0.875em;
+            }
           }
         `}</style>
         <AnimationArea />
