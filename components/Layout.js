@@ -7,10 +7,13 @@ import Pushable from "../components/Pushable";
 import Logo from "./pushables/Logo";
 import Leaf2 from "./pushables/Leaf2";
 import Leaf5 from "./pushables/Leaf5";
+import { format } from "date-fns";
 
 class Layout extends Component {
   render() {
     const { xSmallNoPadding } = this.props;
+    const currentDate = new Date();
+    const currentYear = format(new Date(), "YYYY");
     return (
       <div>
         <Head>
@@ -131,6 +134,12 @@ class Layout extends Component {
           <Leaf5 />
           <Navigation />
           {this.props.children}
+          <footer>
+            <small>
+              &copy; {currentYear} Shy Boys - Artwork by{" "}
+              <a href="https://kitlandwehr.format.com">Kit Landwehr</a>
+            </small>
+          </footer>
         </Container>
       </div>
     );

@@ -88,7 +88,11 @@ const ShowEvent = ({
       <p>{description !== "Shy Boys" ? description : null}</p>
     </div>
     <div className="shows-show-actions">
-      {offers.map(x => <Button href={x.url}>{x.type}</Button>)}
+      {offers.map(x => (
+        <Button key={x.url} href={x.url}>
+          {x.type}
+        </Button>
+      ))}
     </div>
   </div>
 );

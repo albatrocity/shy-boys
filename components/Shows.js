@@ -18,7 +18,7 @@ const Shows = ({ data, compact }) => (
         font-weight: normal;
       }
     `}</style>
-    {data && data.map(x => <ShowEvent data={x} compact={compact} />)}
+    {data && data.map(x => <ShowEvent key={x.id} data={x} compact={compact} />)}
   </div>
 );
 
