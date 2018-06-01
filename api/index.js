@@ -13,6 +13,7 @@ module.exports = function(server, keystone) {
   server.get("/api/posts/:slug", getPost);
   server.get("/api/contacts", getContacts);
   server.get("/api/shows", getShows);
+  server.get("/api/releases", getReleases);
 };
 
 const fillImages = (response, width, height) => {
@@ -60,8 +61,35 @@ async function updateContactsCache(req, config, contentKey) {
 
   cache.put("cache_key", config ? config.cache_key : Date.now());
 
-  const post = await Contact.model.find();
-  cache.put(contentKey, post);
+  const contacts = await Contact.model.find();
+  cache.put(contentKey, contacts);
+  return cache.get(contentKey);
+}
+
+async function updateReleasesCache(req, config, contentKey) {
+  const Release = req.keystone.list("Release");
+
+  const extractAlbumId = (embed = "") => {
+    const first = embed.split("album=")[1];
+    return first ? first.split("/")[0] : undefined;
+  };
+
+  cache.put("cache_key", config ? config.cache_key : Date.now());
+
+  const releaseQuery = await Release.model
+    .find()
+    .sort("-releasedAt")
+    .exec();
+  const releases = releaseQuery.map(x => ({
+    ...x.toJSON(),
+    cover: {
+      thumb_url: x._.cover && x._.cover.limit(600, 600),
+      url: x._.cover && x._.cover.limit(1000, 1000),
+      _id: x._id
+    },
+    bandcampAlbumId: x.playerEmbed && extractAlbumId(x.playerEmbed)
+  }));
+  cache.put(contentKey, releases);
   return cache.get(contentKey);
 }
 
@@ -180,4 +208,21 @@ async function getShows(req, res) {
 
   const bitResponse = await request(options);
   res.json(JSON.parse(bitResponse));
+}
+
+async function getReleases(req, res) {
+  const Configuration = req.keystone.list("Configuration");
+  const config = await Configuration.model.findOne({ active: true });
+  const contentKey = `releases`;
+  if (config && cache.get("cache_key") === config.cache_key) {
+    if (cache.get(contentKey)) {
+      return res.json(cache.get(contentKey));
+    } else {
+      const content = await updateReleasesCache(req, config, contentKey);
+      res.json(content);
+    }
+  } else {
+    const content = await updateReleasesCache(req, config, contentKey);
+    res.json(content);
+  }
 }
