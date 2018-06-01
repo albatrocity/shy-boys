@@ -1,1 +1,2 @@
-export const apiUrl = `${process.env.APP_HOST || "http://localhost:3000/api"}`;
+export const apiUrl = `${process.env.APP_HOST ||
+  "https://shy-boys.herokuapp.com/api"}`;
