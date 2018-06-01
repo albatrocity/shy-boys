@@ -27,7 +27,6 @@ const Release = ({
       .album-art {
         width: ${thumbnailSize};
         height: ${thumbnailSize};
-        // border: 1px solid #2e6f92;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         margin-bottom: 0.6em;
       }
