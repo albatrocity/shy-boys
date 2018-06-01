@@ -1,5 +1,12 @@
 import BandcampAlbum from "./BandcampAlbum";
-import { format } from "date-fns";
+import { format, isBefore } from "date-fns";
+
+const thumbnailSize = "245px";
+
+const releaseDateInfo = date =>
+  isBefore(new Date(), date)
+    ? `release date: ${format(date, "M/D/YYYY")}`
+    : format(date, "YYYY");
 
 const Release = ({
   title,
@@ -13,16 +20,22 @@ const Release = ({
   <div className="release">
     <style jsx>{`
       .release {
-        max-width: 250px;
-        flex-basis: 250px;
+        max-width: ${thumbnailSize};
+        flex-basis: ${thumbnailSize};
         margin-bottom: 2em;
       }
       .album-art {
-        max-width: 250px;
+        width: ${thumbnailSize};
+        height: ${thumbnailSize};
+        // border: 1px solid #2e6f92;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0.6em;
       }
       iframe {
-        width: 250px;
-        height: 250px;
+        width: ${thumbnailSize};
+        height: ${thumbnailSize};
+        display: block;
+        overflow: hidden;
       }
       h3 {
         margin: 0;
@@ -30,17 +43,24 @@ const Release = ({
     `}</style>
     {playerEmbed ? (
       bandcampAlbumId ? (
-        <BandcampAlbum albumId={bandcampAlbumId} />
+        <div className="album-art">
+          <BandcampAlbum albumId={bandcampAlbumId} />
+        </div>
       ) : (
-        <div dangerouslySetInnerHTML={{ __html: playerEmbed }} />
+        <div
+          className="album-art"
+          dangerouslySetInnerHTML={{ __html: playerEmbed }}
+        />
       )
     ) : (
-      <img className="album-art" src={cover.thumb_url} />
+      <a href={purchaseUrl || listenUrl}>
+        <img className="album-art" src={cover.thumb_url} />
+      </a>
     )}
     <h3>
       <a href={purchaseUrl || listenUrl}>{title}</a>
     </h3>
-    <small>released {format(releasedAt, "M/D/YYYY")}</small>
+    <small>{releaseDateInfo(releasedAt)}</small>
   </div>
 );
 
