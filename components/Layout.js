@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactGA from "react-ga";
+import { format } from "date-fns";
 import AnimationArea from "./AnimationArea";
 import Container from "./Container";
 import Head from "next/head";
@@ -7,9 +9,12 @@ import SocialLinks from "./SocialLinks";
 import Logo from "./pushables/Logo";
 import Leaf2 from "./pushables/Leaf2";
 import Leaf5 from "./pushables/Leaf5";
-import { format } from "date-fns";
 
 class Layout extends Component {
+  componentDidMount() {
+    ReactGA.initialize("UA-120307391-1");
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
   render() {
     const { xSmallNoPadding } = this.props;
     const currentDate = new Date();
