@@ -3,7 +3,7 @@ import AnimationArea from "./AnimationArea";
 import Container from "./Container";
 import Head from "next/head";
 import Navigation from "./Navigation";
-import Pushable from "../components/Pushable";
+import SocialLinks from "./SocialLinks";
 import Logo from "./pushables/Logo";
 import Leaf2 from "./pushables/Leaf2";
 import Leaf5 from "./pushables/Leaf5";
@@ -121,6 +121,10 @@ class Layout extends Component {
             line-height: 29px;
           }
 
+          footer {
+            text-align: center;
+          }
+
           @media (max-width: 420px) {
             html {
               font-size: 0.875em;
@@ -135,6 +139,7 @@ class Layout extends Component {
           <Navigation />
           {this.props.children}
           <footer>
+            <SocialLinks />
             <small>
               &copy; {currentYear} Shy Boys - Artwork by{" "}
               <a href="https://kitlandwehr.format.com">Kit Landwehr</a>
