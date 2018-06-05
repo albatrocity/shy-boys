@@ -9,7 +9,8 @@ const cacheBuster = require("./cacheBuster");
  */
 const Post = new keystone.List("Post", {
   autokey: { path: "slug", from: "title publishedAt", unique: true },
-  track: true
+  track: true,
+  defaultSort: "-publishedAt"
 });
 
 Post.add({
