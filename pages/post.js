@@ -28,8 +28,12 @@ const Post = ({ post }) => (
 );
 
 Post.getInitialProps = async context => {
-  const res = await fetch(`${apiUrl}/posts/${context.query.slug}`);
-  const json = await res.json();
+  try {
+    const res = await fetch(`${apiUrl}/posts/${context.query.slug}`);
+    const json = await res.json();
+  } catch (e) {
+    return { post: { title: "Post not found" } };
+  }
   return { post: json };
 };
 
