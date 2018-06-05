@@ -29,6 +29,8 @@ const sizeImages = (response, width, height) => {
   return Object.assign(response, {
     images: response.images.map(image => ({
       url: image.limit(width || 1400, height || 1400),
+      width: image.width,
+      height: image.height,
       _id: image["_id"]
     }))
   });

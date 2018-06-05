@@ -21,11 +21,21 @@ const Page = ({ page }) => (
           content={page.ogContent}
         />
       )}
-      <meta
-        property="og:image:url"
-        content={(page.images[0] || {}).url}
-        key="og:image:url"
-      />
+      {page.images.map(x => (
+        <React.Fragment>
+          <meta property="og:image:url" content={x.url} key="og:image:url" />
+          <meta
+            property="og:image:height"
+            content={x.height}
+            key="og:image:height"
+          />
+          <meta
+            property="og:image:width"
+            content={x.width}
+            key="og:image:width"
+          />
+        </React.Fragment>
+      ))}
     </Head>
     {page.images.length > 0 && (
       <section className="images">
