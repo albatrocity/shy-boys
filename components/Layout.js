@@ -28,6 +28,11 @@ class Layout extends Component {
             content="width=device-width, i nitial-scale=1"
           />
           <meta property="og:title" content="Shy Boys" key="og:title" />
+          <meta
+            property="fb:admins"
+            content="1186530081,34301655,705390136,1560774634"
+            key="fb:admins"
+          />
         </Head>
         <style jsx global>{`
           body,
