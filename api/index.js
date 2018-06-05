@@ -51,6 +51,9 @@ async function updatePostCache(req, config, contentKey) {
   cache.put("cache_key", config ? config.cache_key : Date.now());
 
   const post = await Post.model.findOne({ slug: req.params.slug });
+  if (!post) {
+    throw new Error("Post not found");
+  }
   const prepared = sizeImages(post);
   cache.put(contentKey, prepared);
   return cache.get(contentKey);
