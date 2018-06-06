@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
+import ReactPixel from 'react-facebook-pixel';
 import { format } from "date-fns";
 import AnimationArea from "./AnimationArea";
 import Container from "./Container";
@@ -14,6 +15,9 @@ class Layout extends Component {
   componentDidMount() {
     ReactGA.initialize("UA-120307391-1");
     ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactPixel.init('459345677804152');
+    ReactPixel.pageView();
+
   }
   render() {
     const { xSmallNoPadding } = this.props;
