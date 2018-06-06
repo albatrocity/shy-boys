@@ -5944,6 +5944,10 @@ react-domify@0.2.6:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/react-domify/-/react-domify-0.2.6.tgz#570d3a15cfc9d1fb2f464ccde1236fc5852e49bc"
 
+react-facebook-pixel@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-facebook-pixel/-/react-facebook-pixel-0.1.1.tgz#9f258a08590ec7c11837cc4bc94e294d11a908bc"
+
 react-ga@^2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.5.3.tgz#0f447c73664c069a5fc341f6f431262e3d4c23c4"
