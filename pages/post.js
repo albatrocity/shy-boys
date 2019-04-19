@@ -5,7 +5,7 @@ import fetch from "isomorphic-unfetch";
 import PostView from "../components/PostView";
 import { apiUrl } from "../config/urls";
 
-const Post = ({ post }) => (
+const Post = ({ post = { images: [] } }) => (
   <Layout>
     <Head>
       <title>{post.title} - Shy Boys</title>
