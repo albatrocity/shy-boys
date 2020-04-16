@@ -1,0 +1,66 @@
+{
+  "name": "shy-boys-website",
+  "private": true,
+  "description": "Gatsby Website for Shy Boys (band)",
+  "version": "0.1.0",
+  "author": "Ross Brown <albatrocity@gmail.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "date-fns": "^2.12.0",
+    "gatsby": "^2.20.12",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-remark-images": "^3.2.2",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-source-google-docs": "^2.0.0-beta.6",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.3",
+    "grommet": "^2.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0",
+    "react-social-icons": "^4.1.0",
+    "request-promise-native": "^1.0.8",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^0.19.1",
+    "netlify-lambda": "^1.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/functions",
+    "build": "gatsby build && netlify-lambda build src/functions",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/functions",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "token": "gatsby-source-google-docs-token"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "engines": {
+    "node": ">= 12.6.0",
+    "npm": ">= 6.9.0"
+  }
+}
