@@ -5,44 +5,49 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useContext } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Grommet, Box, ResponsiveContext } from "grommet"
-import styled from "styled-components"
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { Grommet, Box, ResponsiveContext } from "grommet";
+import styled from "styled-components";
 
-import theme from "./theme"
-import SocialLinks from "./SocialLinks"
-import BrandSidebar from "./BrandSidebar"
-import Footer from "./Footer"
-import "./layout.css"
+import theme from "./theme";
+import SocialLinks from "./SocialLinks";
+import BrandSidebar from "./BrandSidebar";
+import Footer from "./Footer";
+import Clown from "./Clown";
+import Butterfly1 from "./Butterfly1";
+import "./layout.css";
 
 const Background = styled(Box)`
   background-position: 0 0;
   background-repeat: repeat;
   background-size: auto;
-`
+`;
 
 const SiteWrapper = styled(Box)`
   max-width: 1600px;
   height: 100vh;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 58px;
   @media only screen ${p =>
       p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
+    padding-bottom: 0;
   }
-`
+`;
 
 const MainContainer = styled(Box)`
+  position: relative;
   height: 100vh;
   @media only screen ${p =>
       p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
   }
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -56,8 +61,17 @@ const Layout = ({ children }) => {
         id
         publicURL
       }
+      butterfly1: file(relativePath: { eq: "butterfly1.png" }) {
+        publicURL
+      }
+      butterfly2: file(relativePath: { eq: "butterfly2.png" }) {
+        publicURL
+      }
+      butterfly3: file(relativePath: { eq: "butterfly3.png" }) {
+        publicURL
+      }
     }
-  `)
+  `);
 
   return (
     <Grommet theme={theme}>
@@ -67,6 +81,8 @@ const Layout = ({ children }) => {
             <BrandSidebar />
             <Box className="main-wrapper" flex={{ grow: 1 }}>
               <MainContainer direction="column" className="main-container">
+                <Clown />
+                <Butterfly1 />
                 <Box
                   className="main-pad"
                   direction="column"
@@ -93,7 +109,7 @@ const Layout = ({ children }) => {
                       pad={{
                         vertical: "medium",
                         horizontal: "medium",
-                        right: "small",
+                        right: "small"
                       }}
                       width="100%"
                     >
@@ -117,11 +133,11 @@ const Layout = ({ children }) => {
         </SiteWrapper>
       </Background>
     </Grommet>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
