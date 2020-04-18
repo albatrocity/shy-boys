@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: absolute;
-  height: ${p => p.height};
-  width: ${p => p.width};
+  height: ${p => p.height}px;
+  width: ${p => p.width}px;
   bottom: -52px;
   left: -160px;
 

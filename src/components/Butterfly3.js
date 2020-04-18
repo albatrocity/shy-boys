@@ -8,8 +8,8 @@ const Container = styled.div`
   height: ${p => p.height}px;
   max-width: ${p => p.width}px;
   width: 8vw;
-  top: 57px;
-  left: 3%;
+  bottom: 140px;
+  right: -2vw;
   z-index: 10;
 
   @media only screen ${p =>
@@ -23,10 +23,10 @@ const Container = styled.div`
   }
 `;
 
-const Butterfly1 = () => {
+const Butterfly3 = () => {
   const data = useStaticQuery(graphql`
-    query Butterfly1Query {
-      butterfly: file(relativePath: { eq: "butterfly1.png" }) {
+    query Butterfly3Query {
+      butterfly: file(relativePath: { eq: "butterfly3.png" }) {
         publicURL
         childImageSharp {
           fixed {
@@ -51,4 +51,4 @@ const Butterfly1 = () => {
   );
 };
 
-export default Butterfly1;
+export default Butterfly3;

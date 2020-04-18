@@ -17,6 +17,8 @@ import BrandSidebar from "./BrandSidebar";
 import Footer from "./Footer";
 import Clown from "./Clown";
 import Butterfly1 from "./Butterfly1";
+import Butterfly2 from "./Butterfly2";
+import Butterfly3 from "./Butterfly3";
 import "./layout.css";
 
 const Background = styled(Box)`
@@ -83,6 +85,7 @@ const Layout = ({ children }) => {
               <MainContainer direction="column" className="main-container">
                 <Clown />
                 <Butterfly1 />
+                <Butterfly2 />
                 <Box
                   className="main-pad"
                   direction="column"
@@ -121,7 +124,9 @@ const Layout = ({ children }) => {
                       pad={{ horizontal: "small" }}
                       border={{ side: "left", style: "dashed" }}
                       width="medium"
+                      style={{ position: "relative" }}
                     >
+                      <Butterfly3 />
                       <Box flex={{ grow: 1 }}>Merch</Box>
                       <Footer />
                     </Box>

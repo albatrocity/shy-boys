@@ -8,14 +8,15 @@ const Container = styled.div`
   height: ${p => p.height}px;
   max-width: ${p => p.width}px;
   width: 8vw;
-  top: 57px;
-  left: 3%;
+  bottom: -80px;
+  left: 40%;
   z-index: 10;
 
   @media only screen ${p =>
       p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     width: ${p => p.width / 2}px;
+    bottom: -100px;
   }
 
   img {
@@ -23,10 +24,10 @@ const Container = styled.div`
   }
 `;
 
-const Butterfly1 = () => {
+const Butterfly2 = () => {
   const data = useStaticQuery(graphql`
-    query Butterfly1Query {
-      butterfly: file(relativePath: { eq: "butterfly1.png" }) {
+    query Butterfly2Query {
+      butterfly: file(relativePath: { eq: "butterfly2.png" }) {
         publicURL
         childImageSharp {
           fixed {
@@ -51,4 +52,4 @@ const Butterfly1 = () => {
   );
 };
 
-export default Butterfly1;
+export default Butterfly2;
