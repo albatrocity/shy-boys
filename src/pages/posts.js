@@ -1,24 +1,29 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
+import { Box } from "grommet";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Post from "../components/Post"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Post from "../components/Post";
 
 const PostsPage = ({
   data: {
-    allMarkdownRemark: { edges },
-  },
+    allMarkdownRemark: { edges }
+  }
 }) => (
   <Layout>
     <SEO title="Posts" />
-    {edges.map(x => (
-      <Post key={x.node.id} {...x.node} />
-    ))}
+    <div>
+      <Box gap="large">
+        {edges.map(x => (
+          <Post key={x.node.id} {...x.node} />
+        ))}
+      </Box>
+    </div>
   </Layout>
-)
+);
 
-export default PostsPage
+export default PostsPage;
 
 export const query = graphql`
   query Posts {
@@ -30,6 +35,7 @@ export const query = graphql`
         node {
           id
           html
+          rawMarkdownBody
           fields {
             slug
           }
@@ -42,4 +48,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

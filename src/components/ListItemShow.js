@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react";
 import {
   Box,
   Heading,
@@ -6,9 +6,9 @@ import {
   Anchor,
   ThemeContext,
   Button,
-  Paragraph,
-} from "grommet"
-import { format } from "date-fns"
+  Paragraph
+} from "grommet";
+import { format } from "date-fns";
 
 const ListItemShow = ({
   url,
@@ -17,7 +17,7 @@ const ListItemShow = ({
   venue,
   offers,
   lineup,
-  on_sale_datetime,
+  on_sale_datetime
 }) => {
   return (
     <Box direction="row-responsive" gap="small">
@@ -45,7 +45,7 @@ const ListItemShow = ({
         ))}
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default ListItemShow
+export default ListItemShow;

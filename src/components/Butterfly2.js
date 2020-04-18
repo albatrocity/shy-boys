@@ -5,18 +5,16 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: absolute;
-  height: ${p => p.height}px;
   max-width: ${p => p.width}px;
   width: 8vw;
-  bottom: -80px;
+  bottom: -40px;
   left: 40%;
   z-index: 10;
 
   @media only screen ${p =>
-      p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     width: ${p => p.width / 2}px;
-    bottom: -100px;
+    bottom: -20px;
   }
 
   img {

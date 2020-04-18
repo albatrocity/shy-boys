@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const VerticalLogo = ({ rotate = false, clip = false, fill = "#ee8d9c" }) => (
   <svg
@@ -16,7 +16,7 @@ const VerticalLogo = ({ rotate = false, clip = false, fill = "#ee8d9c" }) => (
     strokeMiterlimit="2"
   >
     <g
-      transform={clip ? "scale(1 60)" : rotate ? "rotate(-90 492.5 492.5)" : ""}
+      transform={clip ? "scale(1 60)" : rotate ? "rotate(-90 59.06 59.06)" : ""}
     >
       <path
         className="cls-1"
@@ -40,6 +40,6 @@ const VerticalLogo = ({ rotate = false, clip = false, fill = "#ee8d9c" }) => (
       />
     </g>
   </svg>
-)
+);
 
-export default VerticalLogo
+export default VerticalLogo;

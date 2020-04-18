@@ -13,6 +13,10 @@ const Container = styled.div`
   img {
     margin-bottom: 0;
   }
+
+  ${p => `@media only screen ${`and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
+    display: none;
+  }`}
 `;
 
 const Clown = () => {

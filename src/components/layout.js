@@ -14,11 +14,10 @@ import styled from "styled-components";
 import theme from "./theme";
 import SocialLinks from "./SocialLinks";
 import BrandSidebar from "./BrandSidebar";
-import Footer from "./Footer";
 import Clown from "./Clown";
 import Butterfly1 from "./Butterfly1";
 import Butterfly2 from "./Butterfly2";
-import Butterfly3 from "./Butterfly3";
+import SiteMeta from "./SiteMeta";
 import "./layout.css";
 
 const Background = styled(Box)`
@@ -33,11 +32,12 @@ const SiteWrapper = styled(Box)`
   width: 100%;
   margin: 0 auto;
   padding-bottom: 58px;
+  padding-right: 8px;
   @media only screen ${p =>
-      p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
-    padding-bottom: 0;
+    padding-bottom: 75px;
+    padding-right: 0;
   }
 `;
 
@@ -45,13 +45,12 @@ const MainContainer = styled(Box)`
   position: relative;
   height: 100vh;
   @media only screen ${p =>
-      p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, wrapper = true }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -116,20 +115,9 @@ const Layout = ({ children }) => {
                       }}
                       width="100%"
                     >
-                      {children}
+                      {wrapper ? <div>{children}</div> : <>{children}</>}
                     </Box>
-                    <Box
-                      as="footer"
-                      margin={{ vertical: "small" }}
-                      pad={{ horizontal: "small" }}
-                      border={{ side: "left", style: "dashed" }}
-                      width="medium"
-                      style={{ position: "relative" }}
-                    >
-                      <Butterfly3 />
-                      <Box flex={{ grow: 1 }}>Merch</Box>
-                      <Footer />
-                    </Box>
+                    <SiteMeta />
                   </Box>
                 </Box>
               </MainContainer>

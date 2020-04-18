@@ -1,39 +1,21 @@
-import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Post from "../components/Post"
-import Releases from "../components/Releases"
-import Shows from "../components/Shows"
-import { Box } from "grommet"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Post from "../components/Post";
+import IndexPageContent from "../components/IndexPageContent";
 
-const IndexPage = ({ data: { page, posts } }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Box direction="row-responsive" flex={{ grow: 1, shrink: 1 }} gap="small">
-      <Box direction="column" flex="grow">
-        <Box
-          dangerouslySetInnerHTML={{ __html: page.childMarkdownRemark.html }}
-          flex={{ grow: 1 }}
-        ></Box>
-        <Box>
-          <Shows />
-        </Box>
-      </Box>
-      <Box
-        border={{ side: "left", style: "dashed" }}
-        pad={{ left: "small" }}
-        width="300px"
-      >
-        <Releases />
-      </Box>
-    </Box>
-  </Layout>
-)
+const IndexPage = ({ data: { page, posts } }) => {
+  return (
+    <Layout wrapper={false}>
+      <SEO title="Home" />
+      <IndexPageContent content={page.childMarkdownRemark.html} />
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query HomePage {
@@ -65,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

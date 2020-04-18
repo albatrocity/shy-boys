@@ -6,39 +6,47 @@ const theme = {
       "dark-1": "#221F1F",
       border: "#000",
       text: {
-        light: "#000",
-      },
+        light: "#000"
+      }
     },
     font: {
       family: "noort, serif",
       weight: 400,
-      style: "italic",
+      style: "italic"
     },
+    breakpoints: {
+      small: {
+        value: 834
+      }
+    }
   },
   heading: {
     font: {
       family: "silicone, sans-serif",
       weight: 700,
-      style: "normal",
+      style: "normal"
     },
     level: {
       4: {
         medium: {
-          height: "18px",
-        },
-      },
-    },
+          height: "18px"
+        }
+      }
+    }
   },
   text: {
     extend: `
       font-style: italic;
-    `,
+    `
   },
   paragraph: {
     extend: `
       font-style: italic;
     `,
-  },
-}
+    medium: {
+      maxWidth: "large"
+    }
+  }
+};
 
-export default theme
+export default theme;

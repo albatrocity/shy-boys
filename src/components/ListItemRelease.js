@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
-import { Box, Heading, Text, Anchor, ThemeContext } from "grommet"
-import { SocialIcon } from "react-social-icons"
-import { FaSpotify, FaApple } from "react-icons/fa"
-import Img from "gatsby-image"
+import React, { useContext } from "react";
+import { Box, Heading, Text, Anchor, ThemeContext } from "grommet";
+import { SocialIcon } from "react-social-icons";
+import { FaSpotify, FaApple } from "react-icons/fa";
+import Img from "gatsby-image";
 
-import IconDisc from "./IconDisc"
+import IconDisc from "./IconDisc";
 
 const ListItemRelease = ({
   title,
@@ -15,9 +15,9 @@ const ListItemRelease = ({
   spotify,
   apm,
   image,
-  first,
+  first
 }) => {
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
   return (
     <Box
       direction="row"
@@ -80,7 +80,7 @@ const ListItemRelease = ({
         </Box>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default ListItemRelease
+export default ListItemRelease;

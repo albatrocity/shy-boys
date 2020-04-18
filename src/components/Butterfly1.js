@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: absolute;
-  height: ${p => p.height}px;
   max-width: ${p => p.width}px;
   width: 8vw;
   top: 57px;
@@ -13,7 +12,6 @@ const Container = styled.div`
   z-index: 10;
 
   @media only screen ${p =>
-      p.theme.global.breakpoints.small.value &&
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     width: ${p => p.width / 2}px;
   }
