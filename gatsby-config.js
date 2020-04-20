@@ -1,10 +1,10 @@
-const proxy = require("http-proxy-middleware")
+const proxy = require("http-proxy-middleware");
 
 module.exports = {
   siteMetadata: {
     title: `Shy Boys`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Pop band from Kansas City, MO`,
+    author: `@shyboyskc`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,28 +12,28 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `shy-boys`,
+        short_name: `shy-boys`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#afd4c8`,
+        theme_color: `#EE8D9C`,
+        display: `minimal-ui`
         // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      }
     },
     {
       resolve: "gatsby-source-google-docs",
       options: {
-        folders: ["1C0-aeYtwBGAnvZnbu7iSk47dFL-lBlqS"],
-      },
+        folders: ["1C0-aeYtwBGAnvZnbu7iSk47dFL-lBlqS"]
+      }
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -44,20 +44,20 @@ module.exports = {
             options: {
               quality: 90,
               withWebp: true,
-              maxWidth: 1040,
-            },
-          },
-        ],
-      },
+              maxWidth: 1040
+            }
+          }
+        ]
+      }
     },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: "yil0oij",
-        },
-      },
-    },
+          id: "yil0oij"
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -70,9 +70,9 @@ module.exports = {
       proxy({
         target: "http://localhost:9000",
         pathRewrite: {
-          "/.netlify/functions/": "",
-        },
+          "/.netlify/functions/": ""
+        }
       })
-    )
-  },
-}
+    );
+  }
+};
