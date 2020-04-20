@@ -8,7 +8,7 @@ const Container = styled.div`
   height: ${p => p.height}px;
   width: ${p => p.width}px;
   bottom: -52px;
-  left: -160px;
+  left: -184px;
 
   img {
     margin-bottom: 0;

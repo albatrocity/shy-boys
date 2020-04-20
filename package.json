@@ -47,7 +47,8 @@
     "start:lambda": "netlify-lambda serve src/functions",
     "build": "gatsby build && netlify-lambda build src/functions",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/functions",
+    "build:lambda": "netlify-lambda install && netlify-lambda build src/functions",
+    "install:lambda": "netlify-lambda install",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "token": "gatsby-source-google-docs-token"

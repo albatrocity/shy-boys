@@ -13,7 +13,7 @@ const SiteMeta = () => {
       margin={{ vertical: "small" }}
       pad={isSmall ? "medium" : { horizontal: "small" }}
       border={{ side: isSmall ? "top" : "left", style: "dashed" }}
-      width="medium"
+      width={isSmall ? "100%" : "medium"}
       style={{ position: "relative" }}
     >
       <Butterfly3 />

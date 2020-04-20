@@ -3,6 +3,7 @@ const theme = {
     colors: {
       brand: "#EE8D9C",
       light: "#DDEDE8",
+      "light-2": "#afd4c8",
       "dark-1": "#221F1F",
       border: "#000",
       text: {
@@ -19,6 +20,15 @@ const theme = {
         value: 834
       }
     }
+  },
+  button: {
+    border: {
+      radius: "0.2em"
+    },
+    extend: `
+      font-style: italic
+    `,
+    color: "dark-1"
   },
   heading: {
     font: {

@@ -14,7 +14,7 @@ const Container = styled.div`
   @media only screen ${p =>
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     width: ${p => p.width / 2}px;
-    bottom: -20px;
+    bottom: -70px;
   }
 
   img {

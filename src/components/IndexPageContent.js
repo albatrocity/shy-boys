@@ -13,19 +13,20 @@ const IndexPageContent = ({ content }) => {
       flex={{ grow: 1, shrink: 1 }}
       gap={isSmall ? "xlarge" : "small"}
     >
-      <Box direction="column" flex="grow">
+      <Box direction="column" flex={{ shrink: 1, grow: 1 }}>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
           flex={{ grow: 1 }}
         ></div>
-        <Box>
+        <Box overflow={isSmall ? null : "auto"}>
           <Shows />
         </Box>
       </Box>
       <Box
         border={isSmall ? 0 : { side: "left", style: "dashed" }}
         pad={isSmall ? "0" : { left: "small" }}
-        width={isSmall ? "auto" : "300px"}
+        width={isSmall ? "100%" : "300px"}
+        flex={{ shrink: 0 }}
       >
         <Releases />
       </Box>

@@ -8,7 +8,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { Grommet, Box, ResponsiveContext } from "grommet";
+import { Grommet, Box, ResponsiveContext, Text, Anchor } from "grommet";
 import styled from "styled-components";
 
 import theme from "./theme";
@@ -31,13 +31,14 @@ const SiteWrapper = styled(Box)`
   height: 100vh;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 58px;
+  padding-bottom: 65px;
   padding-right: 8px;
   @media only screen ${p =>
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
     padding-bottom: 75px;
     padding-right: 0;
+    padding-left: 0;
   }
 `;
 
@@ -48,6 +49,20 @@ const MainContainer = styled(Box)`
       `and (max-width: ${p.theme.global.breakpoints.small.value}px)`} {
     height: auto;
   }
+`;
+
+const MainPad = styled(Box)`
+  ${p => `
+    @media only screen and (max-width: ${p.theme.global.breakpoints.small.value}px) {
+      margin-left: ${p.theme.global.edgeSize.medium};
+      margin-top: ${p.theme.global.edgeSize.medium};
+    }
+  `}
+`;
+
+const ArtAttribution = styled(Text)`
+  position: absolute;
+  bottom: -2em;
 `;
 
 const Layout = ({ children, wrapper = true }) => {
@@ -80,21 +95,21 @@ const Layout = ({ children, wrapper = true }) => {
         <SiteWrapper>
           <Box direction="row-responsive" fill>
             <BrandSidebar />
-            <Box className="main-wrapper" flex={{ grow: 1 }}>
+            <Box className="main-wrapper" flex={{ grow: 1, shrink: 1 }}>
               <MainContainer direction="column" className="main-container">
                 <Clown />
                 <Butterfly1 />
                 <Butterfly2 />
-                <Box
+                <MainPad
                   className="main-pad"
                   direction="column"
                   flex={{ grow: 1, shrink: 1 }}
-                  margin="medium"
+                  margin={{ right: "medium", bottom: "medium" }}
                   height="100%"
                 >
                   <Box
                     flex={{ shrink: 0 }}
-                    pad={{ vertical: "medium" }}
+                    pad={{ vertical: "small" }}
                     align="end"
                   >
                     <SocialLinks />
@@ -119,7 +134,13 @@ const Layout = ({ children, wrapper = true }) => {
                     </Box>
                     <SiteMeta />
                   </Box>
-                </Box>
+                </MainPad>
+                <ArtAttribution size="small">
+                  artwork by{" "}
+                  <Anchor href="https://www.instagram.com/crimsonhoneycake">
+                    rosie kelly
+                  </Anchor>
+                </ArtAttribution>
               </MainContainer>
             </Box>
           </Box>

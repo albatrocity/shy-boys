@@ -7,11 +7,26 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+const StyledHeading = styled(Heading)`
+  ${p => {
+    const { paragraph, anchor, global } = p.theme;
+    return `
+    margin-left: auto;
+    margin-right: auto;
+    max-width: ${global.size[paragraph.medium.maxWidth] ||
+      paragraph.medium.maxWidth};
+    `;
+  }}
+`;
+
 const PostContainer = styled(Box)`
     ${p => {
       const { paragraph, anchor, global } = p.theme;
       return `
-        p {
+        margin-left: auto;
+        margin-right: auto;
+
+        p, iframe {
           font-size: ${paragraph.medium.size};
           line-height: ${paragraph.medium.height};
           max-width: ${global.size[paragraph.medium.maxWidth] ||
@@ -43,11 +58,14 @@ const PostContainer = styled(Box)`
 `;
 
 const Post = ({ html, frontmatter, fields, rawMarkdownBody }) => (
-  <PostContainer border={{ side: "bottom", style: "dashed" }}>
+  <PostContainer
+    border={{ side: "bottom", style: "dashed" }}
+    pad={{ bottom: "large" }}
+  >
     <article>
-      <Heading>
+      <StyledHeading width="medium">
         <Link to={fields.slug}>{frontmatter.name}</Link>
-      </Heading>
+      </StyledHeading>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </article>
   </PostContainer>

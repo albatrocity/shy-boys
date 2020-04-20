@@ -7,8 +7,8 @@ const Container = styled.div`
   position: absolute;
   max-width: ${p => p.width}px;
   width: 8vw;
-  top: 57px;
-  left: 3%;
+  top: 7px;
+  left: 2%;
   z-index: 10;
 
   @media only screen ${p =>

@@ -30,6 +30,7 @@ const BrandSidebar = () => {
       width={isMobile ? "auto" : "12vw"}
       fill="vertical"
       style={isMobile ? {} : { maxWidth: "160px" }}
+      flex={{ shrink: 0 }}
     >
       <Box
         flex={{ grow: 1, shrink: 0 }}
