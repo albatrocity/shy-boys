@@ -9,7 +9,7 @@ import IndexPageContent from "../components/IndexPageContent";
 const IndexPage = ({ data: { page, posts } }) => {
   return (
     <Layout wrapper={false}>
-      <SEO title="Home" />
+      <SEO />
       <IndexPageContent content={page.childMarkdownRemark.html} />
     </Layout>
   );
