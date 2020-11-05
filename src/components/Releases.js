@@ -15,7 +15,7 @@ const releases = [
     physical: "https://highdiverecords.bandcamp.com/album/shy-boys-shy-boys-2",
     spotify:
       "https://open.spotify.com/album/4c14HIsehJaxaNQAkhUQBP?si=vxFKj_gkQGim2zKuankcdA",
-    apm: "https://music.apple.com/us/album/shy-boys/805628014"
+    apm: "https://music.apple.com/us/album/shy-boys/805628014",
   },
   {
     title: "45",
@@ -26,7 +26,7 @@ const releases = [
     physical: "https://highdiverecords.bandcamp.com/album/shy-boys-45",
     spotify:
       "https://open.spotify.com/album/4eWqBZmwtZVUKa4kGhjMgL?si=knx35tvFThGmm_SOBMudCA",
-    apm: "https://music.apple.com/us/album/45-single/898362462"
+    apm: "https://music.apple.com/us/album/45-single/898362462",
   },
   {
     title: "Bell House",
@@ -37,7 +37,7 @@ const releases = [
     physical: "http://plyvnyl.co/bell-house",
     spotify:
       "https://open.spotify.com/album/5FQqHxs3Nl2Lz6ggKuSGgW?si=JPjaohenSGyS5zT4v9mDKQ",
-    apm: "https://music.apple.com/us/album/bell-house/1389783839"
+    apm: "https://music.apple.com/us/album/bell-house/1389783839",
   },
   {
     title: "Dim the Light/Brick by Brick",
@@ -48,18 +48,19 @@ const releases = [
     spotify:
       "https://open.spotify.com/album/1Mj5RPTMNJgRjMemf1S236?si=wFH1gIu-RUa8beQdF3NRYA",
     apm:
-      "https://music.apple.com/us/album/dim-the-light-brick-by-brick-single/1451341347"
+      "https://music.apple.com/us/album/dim-the-light-brick-by-brick-single/1451341347",
   },
   {
-    title: "Trash",
-    artFile: "trash",
-    format: "Single",
+    title: "Talk Loud",
+    artFile: "talkLoud",
+    format: "LP",
     label: "Polyvinyl",
     year: "2020",
-    spotify: "https://open.spotify.com/track/3jzIVYEpEQS0IcWgZATals",
-    apm: "https://music.apple.com/us/album/trash/1523304983",
-    physical: "https://shyboys.bandcamp.com/album/trash"
-  }
+    spotify:
+      "https://open.spotify.com/album/08BOr02BlJ2n3tYfXc5MUZ?si=AYyf-EP_Q32FlTqjfJEkOA",
+    apm: "https://music.apple.com/us/album/talk-loud/1526853591",
+    physical: "https://polyvinylrecords.com/product/talk_loud",
+  },
 ];
 
 const Releases = () => {
@@ -101,7 +102,7 @@ const Releases = () => {
           }
         }
       }
-      trash: file(relativePath: { eq: "releases/trash.jpg" }) {
+      talkLoud: file(relativePath: { eq: "releases/talk-loud.jpg" }) {
         id
         publicURL
         childImageSharp {
